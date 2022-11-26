@@ -1,4 +1,4 @@
-# Vim, seu melhor amigo 
+# Mini curso de Vim PET UFCG
 <div align="center">
   <img src="/assets/vim.png" width= "100%" />
 </div>
@@ -17,7 +17,7 @@ sua versão gráfica. Assim, para se navegar num texto ou editá-lo, usa-se espe
 combinações de teclas do teclado, o que facilitava a vida dos antigos usuários
 de vi, época tal em que nem exista mouse para computadores pessoais.
 > O mouse começou a ganhar popularidade com o lançamento do
-[Apple Lisa](https://pt.wikipedia.org/wiki/Apple_Lisa), em 1983).
+[Apple Lisa](https://pt.wikipedia.org/wiki/Apple_Lisa), em 1983.
 
 ## Por que usar Vim?
 
