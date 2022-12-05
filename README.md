@@ -1,7 +1,4 @@
-# Mini curso de Vim PET UFCG
-<div align="center">
-  <img src="/assets/vim.png" width= "100%" />
-</div>
+# Vim, seu melhor amigo :sparkles: :technologist:
 
 # Introdução
 
@@ -17,7 +14,7 @@ sua versão gráfica. Assim, para se navegar num texto ou editá-lo, usa-se espe
 combinações de teclas do teclado, o que facilitava a vida dos antigos usuários
 de vi, época tal em que nem exista mouse para computadores pessoais.
 > O mouse começou a ganhar popularidade com o lançamento do
-[Apple Lisa](https://pt.wikipedia.org/wiki/Apple_Lisa), em 1983.
+[Apple Lisa](https://pt.wikipedia.org/wiki/Apple_Lisa), em 1983).
 
 ## Por que usar Vim?
 
@@ -56,6 +53,20 @@ provavelmente estará lá.
 Assim, *programadores curiosos se destacam em relação aos que não são*, já que investem tempo suficiente
 pra dominarem o que usam. Finalmente, te rebato a pergunta: **e por que não usar Vim?**
 
+Se eu te convenci, esses são os passos para você aprender o Vim (e qualquer outro editor de
+texto):
+
+- Começe com um tutorial (ou seja, esse mini curso)
+- Use o editor para qualquer edição de código ou texto (mesmo que ao início
+as coisas pareçam meio lentas)
+- Aprenda constantemente e quando necessário, pois se você pensa que há
+uma maneira de fazer algo de forma mais eficiente, muito provavelmente você está certo.
+- ***Não decore nada***. Aprenda pelo **uso** do editor e suas necessidades com ele.
+- Seja curioso. De vez em quando se pergunte: _o Vim pode fazer isso?_ Para isso, o Google
+será seu melhor amigo: não só para aprender Vim, mas para diversas outras coisas.
+
+> **Nota**: Nós forneceremos vários conteúdos extras para você seguir e se aprofundar.
+
 ## Filosofia do Vim
 
 Por mais que isso te pareça estranho, é comum termos vários programas com suas filosofias próprias:
@@ -83,3 +94,139 @@ já assumiu o controle. Isso reduz a [carga cognitiva](https://pt.wikipedia.org/
 e ajuda a focar na tarefa real.
 
 O resultado final é um editor que pode corresponder à velocidade com que você pensa.
+
+# Fundamentos
+
+## Modos do Vim
+
+Diferente da maioria dos editores de texto/código que existem por aí, Vim tem o que se chama de
+_modos_. O design do Vim é baseado na ideia de que um programador passa a maior parte do
+seu tempo lendo, navegando e editando pequenos trechos de código, ao invés de escrever
+continuamente grandes textos. Por isso o Vim possui múltiplos modos de operação:
+
+- Normal: para se mover num texto e fazer edições
+- Insert: para inserir texto
+- Replace: para substituição de texto
+- Visual (plain, line, block): para selecionar blocos de texto
+- Command-line: para rodar um comando 
+
+Teclas tem diferentes significados dependendo em qual modo você está. Por exemplo,
+a letra `x` no modo _Insert_ significa literalmente o caractere 'x', mas no modo
+_Normal_, essa tecla deleta o caractere debaixo do cursor, assim como no modo
+_Visual_, que deleta o texto selecionado.
+
+Em sua configuração padrão, Vim mostra em qual modo você está bem na parte
+inferior esquerda. Seu modo inicial/padrão é o modo _Normal_ (quando você abre o editor).
+Geralmente, você passará a maior parte do seu tempo entre os modos _Normal_ e _Insert_.
+
+Para trocar de um modo para outro, você aperta a tecla `<ESC>`, indo para o modo _Normal_.
+Do modo Normal, você vai para o modo Insert com `i`, para o modo Replace com `R`, para o modo
+Visual com `v`, Visual Line com `V` ('v' maiúsculo), Visual Block com `<C-v>` (Ctrl-V, às vezes também escrito
+como `^V`), e modo Command-line com `:`.
+
+Sim, eu sei, isso tudo parece muito complicado. Mas não se preocupe, pois os modos do Vim
+se tornarão algo bem familiar: e na verdade você os achará geniais.
+
+Responda rápido: qual tecla te coloca no modo Normal e qual te tira de qualquer modo?
+
+### Modo Normal
+
+O modo Normal é o centro de tudo, pois é ele que te leva a todos os outros modos. Assim,
+permaneça nesse o máximo possível, e troque para outro modo quando necessário.
+Pense no modo Normal como onde você esculpe seu código/texto, seja lendo-o ou então
+fazendo pequenas mudanças. Para ter certeza que você está no modo Normal, aperte
+`<ESC>` e veja seu canto inferior à esquerda, onde aparecerá `NORMAL`.
+
+> Por usarmos muito o `<ESC>` geralmente é bom mapeá-lo para outra tecla,
+como o `<CAPSLOCK>`: essa tecla está na posição de nossos dedos no teclado chamada
+__Home Row__. Não se preocupe com isso por enquanto.
+
+### Modo Command-line
+
+> **Nota**:
+Os comandos do Vim são mnemônicos e, na maioria da vezes, fáceis de lembrar
+
+Em modo Normal, você entra nesse modo apertando `:`.
+Seu cursor pulará para a linha de comando na parte inferior da tela ao pressionar `:`.
+Este modo tem muitas funcionalidades, incluindo abrir, salvar e fechar arquivos, assim como
+[sair do Vim](https://twitter.com/iamdevloper/status/435555976687923200).
+
+- `:q` (ou `:quit`) - para sair de um arquivo não modificado
+- `:q!` - forçar a saída de um arquivo (modificado ou não)
+- `:w` (ou `:write`) - salva o arquivo
+- `:x` - salva o arquivo e sai ao mesmo tempo
+(equivalente a `:wq` ou então `ZZ`)
+
+### Modo Insert
+
+Estando no modo Normal, há diversas formas de entrar no modo Insert:
+
+- `i` ou `a` - para inserir texto antes do cursor ou depois do cursor, respectivamente
+- `I` ou `A` - para inserir texto no começo ou no final da linha, respectivamente
+> Lembre-se do `i` como `insert` e do `a` como `append`
+- `o` ou `O` -  respectivamente, cria uma linha abaixo ou acima de onde você está e te coloca em modo Insert 
+> Lembre-se do `<Shift>` quando for inserir _acima_ de onde você está
+(o Shift é uma setinha para cima)
+
+### Modo Visual
+
+Você pode selecionar um pedaço de texto/código de diferentes formas:
+
+- `v` - para selecionar o caractere abaixo do cursor
+- `V` - para selecionar toda a linha em que o cursor está
+- `<C-v>` - seguido de movimentos, seleciona um bloco de texto
+
+Mas calma, o que são movimentos? Antes de saber os movimentos, vamos entender uma ideia chave do Vim.
+
+## A interface do Vim é uma linguagem de programação
+
+A ideia mais importante no Vim é que a própria interface do Vim é uma linguagem 
+de programação. Teclas (com nomes mnemônicos) são comandos, e esses comandos expressam
+ideias (pense no Vim realmente como uma linguagem, com verbos, substantivos e adjetivos). 
+Isso permite movimentos e edições eficientes, especialmente quando os comandos se tornam 
+[memória muscular](https://en.wikipedia.org/wiki/Muscle_memory).
+
+### Movimentos
+
+Repetindo, você deve passar a maior parte do tempo no modo Normal, usando comandos 
+de movimento para navegar no arquivo. Os movimentos no Vim também são chamados de
+“substantivos”, porque se referem a pedaços de texto.
+
+- Movimentos básicos: 
+    - `h` - direita
+    - `j` - baixo
+    - `k` - cima
+    - `l` - esquerda
+> Dica: o `j` se parece com uma seta pra baixo, não? 
+
+- Palavras:
+    - `w` - vai pro começo da próxima palavra
+    - `b` - volta pro começo da palavra anterior
+    - `e` - vai pro final da próxima palavra
+
+- Linhas:
+    - `0` - começo da linha
+    - `^<Space>` - primeiro caractere da linha
+    - `$` - final da linha
+
+- Tela:
+    - `H` - topo da tela
+    - `M` - meio da tela
+    - `L` - final da tela
+
+- Scroll:
+    - `Ctrl-u` - para cima (_**u**p_)
+    - `Ctrl-d` - para baixo (_**d**own_)
+
+- Arquivo:
+    - `gg` - começo do arquivo
+    - `G` - final do arquivo
+    - `50%` - metade do arquivo (`100%` seria equivalente a `G`)
+
+- Número da linha:
+    - `:{n}` ou `{n}G` - vai para a linha de número `n`
+> Você não tem que digitar os "{", apenas digite `10G`, por ex.
+
+- Correspondência:
+    - `%` - encontra o próximo `(`, `[` ou `{`
+
