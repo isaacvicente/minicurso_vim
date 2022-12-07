@@ -230,3 +230,46 @@ de movimento para navegar no arquivo. Os movimentos no Vim também são chamados
 - Correspondência:
     - `%` - encontra o próximo `(`, `[` ou `{`
 
+## Modo Vim em outros programas
+
+### Por quê?
+
+Já sabemos que o Vim não é exatamente fácil de ser usado no primeiro contato e que o
+aprendizado leva algum tempo. Também sabemos que há toda uma filosofia por trás do
+uso do Vim na edição de textos e que, uma vez que o usuário esteja familiarizado,
+poderá colher os frutos do seu aprendizado editando texto de forma cada vez mais
+eficaz e eficiente. 
+
+Sabendo que grande parte do dia-a-dia de qualquer pessoa na Internet envolve escrever
+textos, e que essa pessoa já utilize o Vim para programação, por quê não usar o Vim
+e os seus comandos também em um navegador, gerenciador de arquivos... Ou até em um
+player de música? Se tratando de programação, o céu é o limite.
+
+### Como isso funciona?
+
+Podemos dividir o funcionamento do "modo Vim" nas aplicações em duas formas de
+implementação: embutida na aplicação e através de plug-in.
+
+Há aplicações que são intencionalmente criadas para serem operadas através de
+atalhos semelhantes ao Vim. Nessa categoria encontraremos aplicações que nós
+normalmente não conhecemos e que podem (ou não) ter todos os recursos que
+esperamos, já que tendem a ser projetos menores e desenvolvidos especialmente
+para ter um modo Vim.
+
+Já outras aplicações podem ser estendidas, permitindo que desenvolvedores criem 
+plug-ins que adicionam o modo Vim a elas. Essa característica é especialmente útil 
+nos casos em que uma aplicação não é desenvolvida com o modo Vim em mente, mas que
+a presença dele seria interessante. 
+
+### Quais aplicações são compatíveis?
+
+Temos uma listagem bastante completa de aplicações que ou possuem o modo Vim ou
+permitem que ele seja adicionado no site [Big Pile of Vim-like](https://vim.reversed.top/apps).
+
+Os destaques incluem:
+- [NeoMutt](https://vim.reversed.top/item/neomutt): cliente de e-mails com modo Vim por padrão.
+- [Ranger](https://vim.reversed.top/item/ranger): gerenciador de arquivos com modo Vim por padrão.
+- [apvlv](https://vim.reversed.top/item/apvlv): visualizador de PDFs e ePUBs no estilo do Vim.
+- [cmus](https://vim.reversed.top/item/cmus): um player de música não tão minimalista com modo Vim.
+- [Vimium](https://vim.reversed.top/item/vimium-chrome): adiciona o modo Vim ao Chrome.
+- [Vimium-FF](https://vim.reversed.top/item/vimium): adiciona o modo Vim ao Firefox.
