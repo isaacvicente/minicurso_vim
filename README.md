@@ -121,7 +121,7 @@ Geralmente, você passará a maior parte do seu tempo entre os modos _Normal_ e 
 
 Para trocar de um modo para outro, você aperta a tecla `<ESC>`, indo para o modo _Normal_.
 Do modo Normal, você vai para o modo Insert com `i`, para o modo Replace com `R`, para o modo
-Visual com `v`, Visual Line com `V` ('v' maiúsculo), Visual Block com `<C-v>` (Ctrl-V, às vezes também escrito
+Visual com `v`, Visual Line com `V` ('v' maiúsculo), Visual Block com `<C-v>` (Ctrl-v, às vezes também escrito
 como `^V`), e modo Command-line com `:`.
 
 Sim, eu sei, isso tudo parece muito complicado. Mas não se preocupe, pois os modos do Vim
@@ -215,8 +215,8 @@ de movimento para navegar no arquivo. Os movimentos no Vim também são chamados
     - `L` - final da tela
 
 - Scroll:
-    - `Ctrl-u` - para cima (_**u**p_)
-    - `Ctrl-d` - para baixo (_**d**own_)
+    - `<C-u>` - para cima (_**u**p_)
+    - `<C-d>` - para baixo (_**d**own_)
 
 - Arquivo:
     - `gg` - começo do arquivo
@@ -229,6 +229,68 @@ de movimento para navegar no arquivo. Os movimentos no Vim também são chamados
 
 - Correspondência:
     - `%` - encontra o próximo `(`, `[` ou `{`
+
+- Encontre:
+    - `f{caractere}` - Posiciona o cursor em cima do `caractere`
+    - `t{caractere}` - Posiciona o cursor antes do `caractere`
+    - `F{caractere}` - Faz o mesmo que `f` mas de trás pra frente
+    - `T{caractere}` - Faz o mesmo que `t` mas de trás pra frente 
+    - `,` para o próximo item e `;` para o anterior
+
+- Busca:
+    - `/{expressão}` - Busca pelo item encontrado pela `expressão` regular
+    - `n` para o próximo item e `N` para o anterior
+
+### Edições
+
+Tudo o que você fazia com o mouse agora você faz com o teclado usando comandos
+de edição que compõem com comandos de movimento. Aqui é onde a interface do Vim
+começa a parecer uma linguagem de programação. Os comandos de edição do Vim também 
+são chamados de “verbos”, porque os verbos agem sobre substantivos.
+
+- `d{movimento}` - Deleta tudo fornecido pelo `movimento`
+    - Por exemplo, `dw` apaga a próxima palavra, `d0` apaga tudo até o começo da linha, `d$` até o final, etc
+- `c{movimento}` - Muda tudo fornecido pelo `movimento`
+    - `cw`, por exemplo, muda a próxima palavra
+    - O mesmo que `d{movimento}` seguido de `i`
+- `x` - Deleta o caractere sob o cursor (igual a `dl`)
+- `s` - Muda o caractere sob o cursor (igual a `cl`)
+- Modo Visual + manipulação
+    - Selecione o texto, `d` para apagá-lo ou `c` para mudá-lo
+- `u` para desfazer e `<C-r>` para refazer
+- `y` - Copia o caractere/texto
+- `p` - Cola o caractere/texto copiado
+> **Nota**: `p` também cola o texto que foi deletado
+
+### Contagens
+
+Você pode combinar substantivos e verbos com uma contagem, que executará
+uma determinada ação várias vezes.
+
+- `3w` move 3 palavras para frente
+- `5j` move cinco linhas para baixo
+- `7dw` deleta 7 palavras
+
+### Agora vamos à prática!
+
+Siga os seguintes passos:
+
+1. Clique nesse [link](/exercicios.txt) para acessar o arquivo
+2. Sobre o botão `Raw` clique com o botão direito de seu mouse e selecione `Salvar link como`
+3. Escolha o diretório `Downloads`
+
+Dentro de seu terminal mova-se para Downloads com:
+```bash
+cd ~/Downloads
+```
+Abra seu arquivo:
+```bash
+vim exercicios.txt
+```
+
+## Buffers, windows e tabs
+
+### Buffers
 
 ## Modo Vim em outros programas
 
@@ -243,7 +305,7 @@ eficaz e eficiente.
 Sabendo que grande parte do dia-a-dia de qualquer pessoa na Internet envolve escrever
 textos, e que essa pessoa já utilize o Vim para programação, por quê não usar o Vim
 e os seus comandos também em um navegador, gerenciador de arquivos... Ou até em um
-player de música? Se tratando de programação, o céu é o limite.
+player de música? Tratando-se de programação, o céu é o limite.
 
 ### Como isso funciona?
 
