@@ -46,7 +46,7 @@ qualquer um que trabalhe com texto, código, etc.
 Nesse momento, pode-se pensar "ah, mas muitas ferramentas, inclusive Git, têm suporte
 em interfaces gráficas em IDEs diversas, por que aprender isso tudo em linha de comando?".
 Perceba que é muito fácil depender de uma interface gráfica como essas, uma vez que 
-não temos que aprender muita coisa, não? Pois bem, é aí que mora o perigo: tendemos, 
+não temos que aprender muita coisa. Pois bem, é aí que mora o perigo: tendemos, 
 de certa forma, a sermos dominados pela ferramenta quando dependemos de abstrações 
 em cima delas. Assim, pessoas que investiram seu tempo aprendendo qualquer ferramenta 
 dessas na linha de comando com certeza saberá lidar melhor com qualquer problema que
@@ -144,7 +144,8 @@ O modo Normal é o centro de tudo, pois é ele que te leva a todos os outros mod
 permaneça nesse o máximo possível, e troque para outro modo quando necessário.
 Pense no modo Normal como onde você esculpe seu código/texto, seja lendo-o ou então
 fazendo pequenas mudanças. Para ter certeza que você está no modo Normal, aperte
-`<ESC>` e veja seu canto inferior à esquerda, onde aparecerá `NORMAL`.
+`<ESC>` e veja seu canto inferior à esquerda, onde aparecerá `NORMAL` 
+(por padrão, todos os outros modos aparecerão no mesmo local).
 
 > Por usarmos muito o `<ESC>` e ser uma tecla longe da posição que digitamos geralmente 
 essa tecla é mapeada para outra tecla mais perto ou até uma combinação de teclas, mas não
@@ -153,7 +154,7 @@ se preocupe com isso por enquanto.
 ### Modo Command-line
 
 > **Nota**:
-Os comandos do Vim são mnemônicos e, na maioria da vezes, fáceis de lembrar
+Os comandos do Vim são mnemônicos e, na maioria da vezes, fáceis de lembrar.
 
 Em modo Normal, você entra nesse modo apertando `:`.
 Seu cursor pulará para a linha de comando na parte inferior da tela ao pressionar `:`.
@@ -167,6 +168,9 @@ como sair do Vim.
 - `:w` (ou `:write`) - salva o arquivo
 - `:x` - salva o arquivo e sai ao mesmo tempo
 (equivalente a `:wq` ou então `ZZ`)
+- `:h` (ou `:help`) - abre uma janela no Vim com o arquivo de ajuda
+    - `:h {comando}` - abre uma janela com a ajuda para o `comando`
+    - Por exemplo, `:h y` te mostra o arquivo de ajuda para o comando `y` do modo `Normal`
 
 ### Modo Insert
 
@@ -174,10 +178,10 @@ Estando no modo Normal, há diversas formas de entrar no modo Insert:
 
 - `i` ou `a` - para inserir texto antes do cursor ou depois do cursor, respectivamente
 - `I` ou `A` - para inserir texto no começo ou no final da linha, respectivamente
-> Lembre-se do `i` como `insert` e do `a` como `append`
+> Lembre-se do `i` como `insert` e do `a` como `append`.
 - `o` ou `O` -  respectivamente, cria uma linha abaixo ou acima de onde você está e te coloca em modo Insert 
 > Lembre-se do `<Shift>` quando for inserir _acima_ de onde você está
-(o Shift é uma setinha para cima)
+(o Shift é uma setinha para cima).
 
 ### Modo Visual
 
@@ -208,7 +212,7 @@ de movimento para navegar no arquivo. Os movimentos no Vim também são chamados
     - `j` - baixo
     - `k` - cima
     - `l` - esquerda
-> Dica: o `j` se parece com uma seta pra baixo, não? 
+> **Dica**: o `j` se parece com uma seta pra baixo.
 
 - Palavras:
     - `w` - vai pro começo da próxima palavra
@@ -217,7 +221,7 @@ de movimento para navegar no arquivo. Os movimentos no Vim também são chamados
 
 - Linhas:
     - `0` - começo da linha
-    - `^<Space>` - primeiro caractere da linha
+    - `^` - primeiro caractere da linha
     - `$` - final da linha
 
 - Tela:
@@ -226,8 +230,8 @@ de movimento para navegar no arquivo. Os movimentos no Vim também são chamados
     - `L` - final da tela
 
 - Scroll:
-    - `Ctrl-u` - para cima (_**u**p_)
-    - `Ctrl-d` - para baixo (_**d**own_)
+    - `<C-u>` - para cima (_**u**p_)
+    - `<C-d>` - para baixo (_**d**own_)
 
 - Arquivo:
     - `gg` - começo do arquivo
@@ -236,10 +240,134 @@ de movimento para navegar no arquivo. Os movimentos no Vim também são chamados
 
 - Número da linha:
     - `:{n}` ou `{n}G` - vai para a linha de número `n`
-> Você não tem que digitar os "{", apenas digite `10G` ou `:10`, por ex.
+> Você não tem que digitar os "{", apenas digite `10G`, por ex.
 
 - Correspondência:
     - `%` - encontra o próximo `(`, `[` ou `{`
+
+- Encontre:
+    - `f{caractere}` - Posiciona o cursor em cima do `caractere`
+    - `t{caractere}` - Posiciona o cursor antes do `caractere`
+    - `F{caractere}` - Faz o mesmo que `f` mas de trás pra frente
+    - `T{caractere}` - Faz o mesmo que `t` mas de trás pra frente 
+    - `,` para o próximo item e `;` para o anterior
+
+- Busca:
+    - `/{expressão}` - Busca pelo item encontrado pela `expressão` regular
+    - `n` para o próximo item e `N` para o anterior
+
+### Edições
+
+Tudo o que você fazia com o mouse agora você faz com o teclado usando comandos
+de edição que compõem com comandos de movimento. Aqui é onde a interface do Vim
+começa a parecer uma linguagem de programação. Os comandos de edição do Vim também 
+são chamados de “verbos”, porque os verbos agem sobre substantivos.
+
+- `d{movimento}` - Deleta tudo fornecido pelo `movimento`
+    - Por exemplo, `dw` apaga a próxima palavra, `d0` apaga tudo até o começo da linha, `d$` até o final, etc
+- `c{movimento}` - Muda tudo fornecido pelo `movimento`
+    - `cw`, por exemplo, muda a próxima palavra
+    - O mesmo que `d{movimento}` seguido de `i`
+- `x` - Deleta o caractere sob o cursor (igual a `dl`)
+- `s` - Muda o caractere sob o cursor (igual a `cl`)
+- Modo Visual + manipulação
+    - Selecione o texto, `d` para apagá-lo ou `c` para mudá-lo
+- `u` para desfazer e `<C-r>` para refazer
+- `y` - Copia o caractere/texto
+- `p` - Cola o caractere/texto copiado
+> **Nota**: `p` também cola o texto que foi deletado.
+
+### Contagens
+
+Você pode combinar substantivos e verbos com uma contagem, que executará
+uma determinada ação várias vezes.
+
+- `3w` move 3 palavras para frente
+- `5j` move cinco linhas para baixo
+- `7dw` deleta 7 palavras
+
+### Agora vamos à prática!
+
+Siga os seguintes passos:
+
+1. Clique nesse [link](/exercicios.txt) para acessar o arquivo.
+2. Sobre o botão `Raw` clique com o botão direito de seu mouse e selecione `Salvar link como`.
+3. Escolha o diretório `Downloads`.
+
+Dentro de seu terminal, mova-se para `Downloads` com:
+```bash
+cd ~/Downloads
+```
+Abra o arquivo de exercícios:
+```vim
+vim exercicios.txt
+```
+
+## Buffers, windows e tabs
+
+### Buffers
+
+Um buffer é nada mais que o texto que você está editando. Assim, cada arquivo que você abre no Vim
+tem seu próprio buffer. Logo, quando você roda `vim texto.txt`, você está abrindo o Vim com um
+único buffer que é carregado com o conteúdo de `texto.txt`. Você pode, então, abrir com o Vim com
+vários buffers carregados, um para cada arquivo, como por exemplo, `vim ~/.vimrc ~/.bashrc`.
+
+### Windows
+
+Uma janela (window) é apenas uma maneira de visualizar um buffer. O importante
+a observar é que uma janela pode visualizar qualquer buffer que desejar, ou
+seja, ela não é forçada a olhar para o mesmo buffer. Ao editar um arquivo, se
+digitarmos `:vsplit`, teremos uma divisão vertical e na outra janela veremos o
+buffer atual que estamos editando! Acontece que quando abrimos uma janela, ela
+visualiza o buffer atual. Executando os comandos relacionados aos buffers, podemos
+modificar qual buffer a janela está *visualizando*.
+
+### Tabs
+
+Tabs são abas. Não confunda as abas do Vim com as do VSCode (ou qualquer editor de texto
+parecido). No Vim, uma aba é uma coleção de janelas, ou seja, um *layout*. Abas foram
+desenvolvidas para permitir que tenhamos diferentes layouts de janelas.
+
+Para evitar essa pequena confusão, tente apenas usar buffers e janelas. Mais futuramente,
+quando eventualmente você precisar de diferentes layouts para seus buffers, use abas.
+
+> Uma discussão mais detalhada de buffers, windows e tabs encontra-se nesse 
+[blog post](https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/),
+no qual se tem alguns exemplos que ilustram o uso de buffers e windows.
+
+### Trabalhando com buffers e windows
+
+Vamos abrir dois buffers com o Vim:
+```vim
+vim .vimrc exercicios.txt
+```
+
+Isso te levará ao arquivo `.vimrc`. Porém, ao usar o comando `:ls`, você verá
+que, na verdade, há dois buffers. Para ir pro próximo buffer faça:
+- `:bn` (ou `:bnext`)
+
+Analogamente, para voltar um buffer:
+- `:bp` (ou `:bprevious`)
+
+Com isso, você estará no arquivo `.vimrc` novamente, sem nem precisar sair do Vim.
+
+Agora, vamos supor que você queira visualizar dois arquivos ao mesmo tempo, de modo
+a ter um fácil acesso a ambos. Para isso, é útil utilizarmos duas janelas.
+Por exemplo:
+```vim
+vim .bashrc .vimrc
+```
+Com isso, fazemos:
+- `<C-w>` ou `:sp` (ou `:split`) - abrimos uma janela horizontalmente
+> Note que a janela está visualizando o mesmo buffer.
+
+- `:bn` - dentro da nova janela, vamos pro próximo buffer
+
+[![asciicast](https://asciinema.org/a/546285.svg)](https://asciinema.org/a/546285?autoplay=1)
+
+Como essa operação é muito comum, temos um único comando equivalente ao que fizemos:
+- `:sbn` (ou `:sbnext`) - abre uma janela horizontal e visualiza o próximo buffer
+> Tente fazer esse você mesmo!
 
 ## Modo Vim em outros programas
 
@@ -254,7 +382,7 @@ eficaz e eficiente.
 Sabendo que grande parte do dia-a-dia de qualquer pessoa na Internet envolve escrever
 textos, e que essa pessoa já utilize o Vim para programação, por quê não usar o Vim
 e os seus comandos também em um navegador, gerenciador de arquivos... Ou até em um
-player de música? Se tratando de programação, o céu é o limite.
+player de música? Tratando-se de programação, o céu é o limite.
 
 ### Como isso funciona?
 
@@ -287,7 +415,10 @@ Os destaques incluem:
 
 Além disso, algumas aplicações que suportam plugins que fazem com que a edição de
 texto/navegação seja como Vim são:
-- [Visual Studio Code + Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim): o VSCode tem uma extensão que permite edição de texto como Vim, com linha de comando e macros inclusos.
+- [Visual Studio Code + Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim):
+ o VSCode tem uma extensão que permite edição de texto como Vim, com linha de comando e macros inclusos.
+- [JetBrains + Vim = IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim): assim como o 
+VSCode, as IDEs da JetBrains também têm uma extensão para o Vim.
 - [Obsidian](https://obsidian.md/): aplicação para anotações que além de já vir com um 
 "modo Vim" embutido, tem plugins como 
 [esse](https://github.com/esm7/obsidian-vimrc-support) que dão suporte até a arquivos 
