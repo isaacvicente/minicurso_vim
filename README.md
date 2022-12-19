@@ -55,6 +55,13 @@ exija uso mais complexo dessas.
 Programadores curiosos, que buscam entender com mais profundidade as ferramentas que usam
 podem ter um diferencial importante para as situações mais diversas, portanto, te rebato a pergunta: por que **não** usar Vim?
 
+> Faça sua escolha.
+
+<p align="center">
+  <img src="assets/vim_redpill.png" />
+</p>
+
+
 Se você foi minimamente convencido, esses são os passos que você pode seguir para começar
 a aprender Vim (e qualquer outro editor de texto):
 
@@ -161,7 +168,10 @@ Seu cursor pulará para a linha de comando na parte inferior da tela ao pression
 Este modo tem muitas funcionalidades, incluindo abrir, salvar e fechar arquivos, assim 
 como sair do Vim.
 
-![close_vim](assets/close_vim.png)
+<p align="center">
+  <img src="assets/close_vim.png" />
+</p>
+
 
 - `:q` (ou `:quit`) - para sair de um arquivo não modificado
 - `:q!` - forçar a saída de um arquivo (modificado ou não)
@@ -229,9 +239,11 @@ de movimento para navegar no arquivo. Os movimentos no Vim também são chamados
     - `M` - meio da tela
     - `L` - final da tela
 
-- Scroll:
-    - `<C-u>` - para cima (_**u**p_)
-    - `<C-d>` - para baixo (_**d**own_)
+- Páginas:
+    - `<C-u>` - uma página para cima (_**u**p_)
+    - `<C-d>` - uma página para baixo (_**d**own_)
+
+> Uma página é o texto que ocupa toda a tela do seu terminal.
 
 - Arquivo:
     - `gg` - começo do arquivo
@@ -290,18 +302,60 @@ uma determinada ação várias vezes.
 
 Siga os seguintes passos:
 
-1. Clique nesse [link](/exercicios.txt) para acessar o arquivo.
-2. Sobre o botão `Raw` clique com o botão direito de seu mouse e selecione `Salvar link como`.
-3. Escolha o diretório `Downloads`.
+Primeiro, vamos praticar toda a parte básica (e mais algumas coisas)
+que vimos até agora. Em seu terminal, digite:
 
-Dentro de seu terminal, mova-se para `Downloads` com:
 ```bash
-cd ~/Downloads
+vimtutor pt.utf-8
 ```
-Abra o arquivo de exercícios:
-```vim
-vim exercicios.txt
+> Esse é o texto oficialmente traduzido do vimtutor original, em inglês.
+
+Agora siga todo o texto, fazendo cada lição. Além disso, ajude o colega ao lado,
+se possível.
+
+Para ter algum texto/código para brincar, faça isso:
+
+1. Clone esse repositório com:
+```bash
+git clone https://github.com/isaacvicente/minicurso_vim
 ```
+2. Mova-se para o diretório recém criado:
+```bash
+cd minicurso_vim
+```
+> **Dica**: use o Tab para autocompletar o nome do diretório.
+
+3. Veja os arquivos disponíveis:
+```bash
+ls
+```
+
+#### vimrc
+
+vimrc é o arquivo de configuração do Vim. É nele onde o Vim pode ser customizado
+ao seu próprio gosto. Para tal, o Vim usa uma linguagem própria para sua configuração,
+o VimL (ou Vim Language).
+> Não se preocupe com essa linguagem. Para o básico, cada opção é bem fácil de entender.
+
+Temos um vimrc mínimo para você. Cada opção é seguida de uma pequena explicação em inglês.
+Procure entender o que a maioria delas significa.
+
+Vamos usar o vimrc disponível! Do seu terminal, digite:
+```bash
+mkdir -p ~/.vim/
+```
+Agora copie o vimrc para a pasta `.vim/`:
+```bash
+cp vimrc ~/.vim/
+```
+> Em sistemas UNIX, diretórios/arquivos precedidos de um ponto (.)
+são diretórios/arquivos escondidos. Geralmente os arquivos de 
+configuração ou são arquivos escondidos ou ficam em alguma pasta
+escondida. Por tal motivo, chamamos esses arquivos de *dotfiles*.
+Por exemplo, você pode ver
+[meus dotfiles](https://github.com/isaacvicente/dotfiles).
+
+> **Dica**: para ver arquivos/diretórios escondidos digite `ls -a` (ou `ls --all`).
 
 ## Buffers, windows e tabs
 
@@ -338,28 +392,30 @@ no qual se tem alguns exemplos que ilustram o uso de buffers e windows.
 ### Trabalhando com buffers e windows
 
 Vamos abrir dois buffers com o Vim:
-```vim
-vim .vimrc exercicios.txt
+```bash
+vim c-code.c lorem_ipsum.txt
 ```
 
-Isso te levará ao arquivo `.vimrc`. Porém, ao usar o comando `:ls`, você verá
+Isso te levará ao arquivo `c-code.c`. Porém, ao usar o comando `:ls`, você verá
 que, na verdade, há dois buffers. Para ir pro próximo buffer faça:
 - `:bn` (ou `:bnext`)
 
 Analogamente, para voltar um buffer:
 - `:bp` (ou `:bprevious`)
 
-Com isso, você estará no arquivo `.vimrc` novamente, sem nem precisar sair do Vim.
+Com isso, você estará no arquivo `c-code.c` novamente, sem nem precisar sair do Vim.
 
 Agora, vamos supor que você queira visualizar dois arquivos ao mesmo tempo, de modo
 a ter um fácil acesso a ambos. Para isso, é útil utilizarmos duas janelas.
 Por exemplo:
-```vim
-vim .bashrc .vimrc
+```bash
+vim c-code.c python-code.py
 ```
 Com isso, fazemos:
-- `<C-w>` ou `:sp` (ou `:split`) - abrimos uma janela horizontalmente
-> Note que a janela está visualizando o mesmo buffer.
+- `<C-w>` `s` ou `:sp` (ou `:split`) - abrimos uma janela horizontalmente
+> Aperte Ctrl (lembre-se da notação do Ctrl) seguido de 'w'.
+Depois disso, você pode livremente apertar 's'.
+Note que a janela está visualizando o mesmo buffer.
 
 - `:bn` - dentro da nova janela, vamos pro próximo buffer
 
@@ -368,6 +424,22 @@ Com isso, fazemos:
 Como essa operação é muito comum, temos um único comando equivalente ao que fizemos:
 - `:sbn` (ou `:sbnext`) - abre uma janela horizontal e visualiza o próximo buffer
 > Tente fazer esse você mesmo!
+
+Mais comandos úteis de janelas:
+
+- `:vs`, `:vsplit` ou `<C-w>` `v` - Abre uma janela verticalmente
+- `:new` - Abre uma janela e te coloca pra editar um arquivo em branco
+    - `:sp {arq}` - Faz o mesmo que `:new`, porém cria um arquivo com nome `arq`
+> **Nota**: para fechar uma janela, você usa o convencial `:q`.
+
+- `<C-w` `h`/`j`/`k`/`l`
+    - Te move para a janela da(e) esquerda/baixo/cima/direita.
+
+Para inverter a posição de duas (ou mais janelas), fazemos:
+
+- `<C-w` `r` - inverta a janela à direita ou a janela abaixo
+- `<C-w` `R` - inverte a janela à esquerda ou a janela acima
+
 
 ## Modo Vim em outros programas
 
@@ -406,12 +478,11 @@ Temos uma listagem bastante completa de aplicações que ou possuem o modo Vim o
 permitem que ele seja adicionado no site [Big Pile of Vim-like](https://vim.reversed.top/apps).
 
 Os destaques incluem:
-- [NeoMutt](https://vim.reversed.top/item/neomutt): cliente de e-mails com modo Vim por padrão.
-- [Ranger](https://vim.reversed.top/item/ranger): gerenciador de arquivos com modo Vim por padrão.
-- [apvlv](https://vim.reversed.top/item/apvlv): visualizador de PDFs e ePUBs no estilo do Vim.
-- [cmus](https://vim.reversed.top/item/cmus): um player de música não tão minimalista com modo Vim.
-- [Vimium](https://vim.reversed.top/item/vimium-chrome): adiciona o modo Vim ao Chrome.
-- [Vimium-FF](https://vim.reversed.top/item/vimium): adiciona o modo Vim ao Firefox.
+- [NeoMutt](https://neomutt.org/): cliente de e-mails com modo Vim por padrão.
+- [Ranger](https://github.com/ranger/ranger): gerenciador de arquivos com modo Vim por padrão.
+- [cmus](https://cmus.github.io/): um player de música não tão minimalista com modo Vim.
+- [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb): adiciona o modo Vim ao Chrome.
+- [Vimium-FF](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/): adiciona o modo Vim ao Firefox.
 
 Além disso, algumas aplicações que suportam plugins que fazem com que a edição de
 texto/navegação seja como Vim são:
@@ -423,3 +494,67 @@ VSCode, as IDEs da JetBrains também têm uma extensão para o Vim.
 "modo Vim" embutido, tem plugins como 
 [esse](https://github.com/esm7/obsidian-vimrc-support) que dão suporte até a arquivos 
 de configuração para o Vim.
+
+## Conteúdos extras
+
+- [**Curated Learning Resources - Vim Resources**](https://learnbyexample.github.io/curated_resources/vim.html):
+uma lista com os melhores conteúdos relacionados ao Vim, desde livros até dicas práticas. Guarde esse link em seus
+bookmarks e seja feliz.
+- [Vimrc Configuration Guide](https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/):
+um guia de configuração do vimrc.
+> **Nota**: só adicione ao seu vimrc apenas o que você precisa: geralmente, quanto mais simples, melhor.
+
+- [Learn Vim the Smart Way](https://learnvim.irian.to/): uma guia pelas partes boas do Vim, com boa profundidade
+de conteúdo mas não tanta a ponto de te sobrecarregar.
+- [r/vim - Wiki](https://www.reddit.com/r/vim/wiki/index/): a wiki do subreddit do Vim, com ótimas dicas construídas
+pela comunidade.
+
+### Plugins
+
+Assim como em outros editores de texto modernos, o Vim também tem seus plugins. Escolhendo a dedo cada
+plugin pode tornar sua experiência no Vim extremamente mais conveniente.
+
+- [Vim Awesome](https://vimawesome.com/): uma lista awesome dos plugins mais curtidos e usados pela
+comunidade.
+> Uma lista incrível (awesome) é uma lista de coisas incríveis com curadoria da
+comunidade. Existem listas incríveis sobre tudo, desde aplicativos CLI até
+livros de fantasia.
+
+### Neovim, o sucessor do Vim
+
+O [Neovim](https://neovim.io/) é para o Vim assim como o Vim foi para o Vi. A verdade é que
+você não está nada errado em usar apenas o Vim. Porém, ultimamente o Neovim vem ganhando muita popularidade,
+sendo o editor de texto mais amado, segundo o 
+[survey do StackOverFlow de 2022](https://survey.stackoverflow.co/2022/#section-most-loved-dreaded-and-wanted-integrated-development-environment).
+
+Algumas das vantagens (dependendo do seu ponto de vista):
+
+- [LSP - Language Server Protocol](https://neovim.io/doc/user/lsp.html#lsp): O LSP facilita recursos
+como go-to-definition, find-references, hover, conclusão, renomeação, formatação, refatoração,
+etc., usando análise semântica de todo o projeto.
+- [Lua scripting](https://neovim.io/doc/user/lua.html#lua): Lua é uma linguagem de scripts bem simples
+e relativamente popular. Ela pode ser usada para configurar o Neovim, oferecendo uma grande flexibilidade
+a um (talvez) pequeno custo de aprender uma nova linguagem de programação.
+
+Uma coisa muito bacana acerca do Neovim é que foram construídas aplicações que simulam muito bem modernas
+IDEs. As mais famosas são:
+
+- [LunarVim](https://www.lunarvim.org/): uma camada de IDE sobre o Neovim. Completamente dirigida pela
+comunidade.
+- [NvChad](https://nvchad.com/): uma configuração do Neovim escrita em Lua com o objetivo de
+fornecer uma configuração básica com uma bela interface do usuário e um tempo de inicialização extremamente rápido.
+
+> **Nota**: esses projetos são fantásticos, porém não vá simplesmente usá-los. Se você considera utilizar o Neovim,
+eu recomendaria você realmente entender primeiro o que o Neovim, por padrão, é capaz de fazer. É muito satisfatório
+construir uma configuração só sua: então considere fazer isso!
+
+Há ainda mais motivos para que uma pessoa talvez troque Vim pelo Neovim. Se você ficou curioso(a),
+pesquise mais sobre.
+
+## Considerações finais
+
+Eu realmente espero que você tenha levado algo de útil desse mini curso. Espero também que você
+legitimamente queira usar o Vim (nem que seja para ficar algumas semanas usando). Para quaisquer
+dúvidas contate o [Instagram do PET Computação](https://www.instagram.com/petcomputacaoufcg/) ou então o dos
+organizadores desse mini curso: [Isaac Vicente](https://www.instagram.com/isaac_vcnt/) e
+[Vinícius Muniz](https://www.instagram.com/vinimuz/).
