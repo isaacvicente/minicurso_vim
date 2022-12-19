@@ -120,11 +120,11 @@ _modos_. O design do Vim é baseado na ideia de que um programador passa a maior
 seu tempo lendo, navegando e editando pequenos trechos de código, ao invés de escrever
 continuamente grandes textos. Por isso o Vim possui múltiplos modos de operação:
 
-- Normal: para se mover num texto e fazer edições
-- Insert: para inserir texto
-- Replace: para substituição de texto
-- Visual (plain, line, block): para selecionar blocos de texto
-- Command-line: para rodar um comando 
+- **Normal**: para se mover num texto e fazer edições
+- **Insert**: para inserir texto
+- **Replace**: para substituição de texto
+- **Visual** (plain, line, block): para selecionar blocos de texto
+- **Command-line**: para rodar um comando 
 
 Teclas tem diferentes significados dependendo em qual modo você está. Por exemplo,
 a letra `x` no modo _Insert_ significa literalmente o caractere 'x', mas no modo
@@ -553,7 +553,7 @@ pesquise mais sobre.
 
 ## Considerações finais
 
-Eu realmente espero que você tenha levado algo de útil desse mini curso. Espero também que você
+Realmente esperamos que você tenha levado algo de útil desse mini curso. Esperamos também que você
 legitimamente queira usar o Vim (nem que seja para ficar algumas semanas usando). Para quaisquer
 dúvidas contate o [Instagram do PET Computação](https://www.instagram.com/petcomputacaoufcg/) ou então o dos
 organizadores desse mini curso: [Isaac Vicente](https://www.instagram.com/isaac_vcnt/) e
