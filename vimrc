@@ -8,6 +8,7 @@ set nocompatible
 
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
+set termguicolors          " More colorful colors
 
 set number                 " Show line numbers.
 set relativenumber         " Enables relative line numbering mode.
@@ -30,6 +31,7 @@ set display     =lastline  " Show as much as possible of the last line.
 set showmode               " Show current mode in command-line.
 set showcmd                " Show already typed keys when more are expected.
 set wildmenu               " Shows a more advanced menu for auto-completion suggestions.
+set cursorline             " Enables cursor line
 
 set incsearch              " Highlight while searching with / or ?.
 set ignorecase             " If using just lowercase characters, search case insensitive.
@@ -47,15 +49,3 @@ set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
 
 set list                   " Show non-printable characters.
-if has('multi_byte') && &encoding ==# 'utf-8'
-  let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
-else
-  let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
-endif
-
-" The fish shell is not very compatible to other shells and unexpectedly
-" breaks things that use 'shell'.
-if &shell =~# 'fish$'
-  set shell=/bin/bash
-endif
-
