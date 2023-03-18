@@ -432,13 +432,13 @@ Mais comandos úteis de janelas:
     - `:sp {arq}` - Faz o mesmo que `:new`, porém cria um arquivo com nome `arq`
 > **Nota**: para fechar uma janela, você usa o convencial `:q`.
 
-- `<C-w` `h`/`j`/`k`/`l`
+- `<C-w>` `h`/`j`/`k`/`l`
     - Te move para a janela da(e) esquerda/baixo/cima/direita.
 
 Para inverter a posição de duas (ou mais janelas), fazemos:
 
-- `<C-w` `r` - inverta a janela à direita ou a janela abaixo
-- `<C-w` `R` - inverte a janela à esquerda ou a janela acima
+- `<C-w>` `r` - inverte a janela à direita ou a janela abaixo
+- `<C-w>` `R` - inverte a janela à esquerda ou a janela acima
 
 
 ## Modo Vim em outros programas
