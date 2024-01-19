@@ -1,5 +1,3 @@
-# Vim, seu melhor amigo :sparkles: :technologist:
-
 # Introdução
 
 ## O que é o Vim?
@@ -19,66 +17,66 @@ dos usuários.
 
 ## Por que usar Vim?
 
-É importante ressaltar que o Vim foi feito por programadores para programadores.
-Então, se você está lendo esse texto, muito provavelmente é um programador ou então
-pretende ser. Entretanto, Vim continua sendo apenas um editor de texto que provém uma
-diferente interface de edição, tornando plenamente possível o uso da ferramenta para
-tarefas diversas além da programação.
+Vou dividir a resposta para essa pergunta em duas partes.
 
-O Vim é um editor que envolve uma curva de aprendizado levemente maior que alguns outros,
-mas não é nada de outro mundo como muitos fazem parecer ser. O início do aprendizado
-envolve apenas a sua atenção para trabalhar com os recursos providos pelo editor, visto
-que é fácil se pegar usando o Vim como qualquer outro editor comum por costume. Essa,
-provavelmente é a parte mais custosa do aprendizado.
+### Vim Motions
 
-Ao invés de pensar no curto ou médio prazo, imagine como você estará daqui a alguns meses,
-ou até anos depois de começar a usar o Vim. A partir daí, perceberá que muitos dos 
-comandos que precisou lembrar diversas vezes serão parte de sua [memória muscular](https://en.wikipedia.org/wiki/Muscle_memory).
+Você pode não usar o editor de texto Vim. Porém, a coisa mais importante sobre
+o Vim não é o próprio editor em si, porém *como* você se movimenta nele, ou
+seja, as *vim motions*. Sabe quando você vai na cozinha e automaticamente, sem
+pensar, acaba pegando um copo d'água e começar a beber e depois de um tempo se
+pergunta por que começou a beber água? Você pode ter feito isso por pura
+memória muscular (ou corporal nesse caso).
 
-Como programadores, passamos muito tempo editando código, e por isso, dominar um editor
-de texto é um investimento importante a ser feito. O Vim é, afinal de contas, uma simples
-ferramenta que permite que sejamos mais eficientes ao programar e escrever num geral. 
-Assim como desenvolver sofware e saber usar ferramentas como Git em linha de comando
-pode ser um diferencial muitas vezes, um editor de texto bem dominado também pode tornar 
-a passagem de ideias para texto mais leve e rápida, recurso importantíssimo para 
-qualquer um que trabalhe com texto, código, etc.
+Com o Vim, você tem maneiras bem eficientes de se movimentar no texto, com
+alguns pressionar de teclas você consegue fazer o que quiser. Com isso, você
+pode combinar a maneira de editar do vim (as vim motions) com a memória
+muscular. Nesse sentido, com o tempo você nem se preocupará em *como* mas sim
+*no que* fazer.
 
-Nesse momento, pode-se pensar "ah, mas muitas ferramentas, inclusive Git, têm suporte
-em interfaces gráficas em IDEs diversas, por que aprender isso tudo em linha de comando?".
-Perceba que é muito fácil depender de uma interface gráfica como essas, uma vez que 
-não temos que aprender muita coisa. Pois bem, é aí que mora o perigo: tendemos, 
-de certa forma, a sermos dominados pela ferramenta quando dependemos de abstrações 
-em cima delas. Assim, pessoas que investiram seu tempo aprendendo qualquer ferramenta 
-dessas na linha de comando com certeza saberá lidar melhor com qualquer problema que
-exija uso mais complexo dessas.
+Por consequência disso, você ficará muito mais rápido e livre ao editar texto,
+tendo mais liberdade de pensar no texto em si. Uma coisa boa das vim motions é
+que elas estão em todo lugar. Seja nos editores de texto mais populares, em
+algumas ferramentas de linha de comando, navegadores, etc.
 
-Programadores curiosos, que buscam entender com mais profundidade as ferramentas que usam
-podem ter um diferencial importante para as situações mais diversas, portanto, te rebato a pergunta: por que **não** usar Vim?
+Por fim, as vim motions são como um vício. Uma vez acostumado, fica difícil
+voltar atrás.
 
-> Faça sua escolha.
+### O editor de texto
 
-<p align="center">
-  <img src="assets/vim_redpill.png" />
-</p>
+A experiência com o editor de texto varia muito de pessoa pra pessoa. Alguns se
+acostumam, outros nem tanto.  O mais importante é estar pelo menos
+familiarizado com as vim motions antes de tentar usar o editor, já que você
+sabe como realizar tarefas básicas.
 
+Usar o editor de texto te proporcionará duas coisas muito importantes:
 
-Se você foi minimamente convencido, esses são os passos que você pode seguir para começar
-a aprender Vim (e qualquer outro editor de texto):
+- **Contato com a linha de comando**. Saber como usar a linha de comando (no
+  terminal) com proeficiência é essencial para qualquer programador, use ele o
+  Vim ou não.  Dessa forma, com o Vim, você tem constante contato com a linha
+  de comando, pois o Vim é apenas um editor de texto, e qualquer coisa fora
+  disso você precisará acessar a linha de comando.  Assim, parte das
+  ferramentas [`coreutils`](https://en.wikipedia.org/wiki/GNU_Core_Utilities)
+  são essenciais para o dia a dia no terminal, além de outras ferramentas,
+  como, `grep`, `awk`, `sed`, `less`, etc.
 
-- Começe com um tutorial (ou seja, esse mini curso)
-- Use o editor para qualquer edição de código ou texto simples que precisar fazer: anotar,
-arquivos de configuração, escrever histórias, o que seja. Mesmo que inicialmente as 
-coisas pareçam mais lentas do que você edita no seu editor primário no momento.
-- Ao editar, se você pensa que há uma maneira de fazer algo de forma mais eficiente, 
-muito provavelmente você está certo. Portanto, um pensamento mais "lógico" de como editar
-pode ajudar sempre!
-- **Vim não precisa de decoração de comandos**. Quer saber como fazer tal tarefa no Vim?
-O Google é seu amigo :). Com o tempo, você notará que a memória muscular já tomou parte
-e você nem precisa mais se lembrar de como fazer certas coisas no Vim.
-- Seja curioso. De vez em quando se pergunte: *Vim pode fazer isso?* Para isso, o Google
-será seu melhor amigo mais uma vez: não só para aprender Vim, mas para diversas outras coisas.
+- **Personalização do workflow**. Pela flexibilidade do Vim, você pode configurar
+seu editor de texto da maneira que *você* quiser. Ter um workflow que funcione
+para você é essencial, pois te dará mais conforto e velocidade ao trabalhar com
+seu editor de texto.  Ainda, ao configurar o Vim, existem muitas opções de
+integração entre o editor e várias ferramentas de terminal (como as mencionadas
+anteriormente). Por exemplo, você pode configurar o Vim para que ele tenha
+análise sintática do seu código, mostrando erros de sintaxe, gere snippets de
+código, etc.
 
-> **Nota**: Nós forneceremos vários conteúdos extras para você seguir e se aprofundar.
+> [Vídeo interessante de um bom canal sobre Vim](https://youtu.be/D4YTJ2W5q4Y?si=cn31fAgj4eGPeRrz).
+
+Frequentemente as pessoas comparam um editor ao outro.  O que uma pessoa se
+deve atentar é qual a experiência que ela terá e quais os pontos positivos e
+negativos que aquele editor tem. Muitas vezes, para se tornar proeficiente num
+editor de texto, isso requer tempo e esforço. Assim, comparar editores não faz
+sentido, pois é o usuário e o seu workflow que importam e não as
+características de outro editor.
 
 ## Filosofia do Vim
 
