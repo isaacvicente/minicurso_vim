@@ -72,11 +72,11 @@ coisas pareçam mais lentas do que você edita no seu editor primário no moment
 - Ao editar, se você pensa que há uma maneira de fazer algo de forma mais eficiente, 
 muito provavelmente você está certo. Portanto, um pensamento mais "lógico" de como editar
 pode ajudar sempre!
-- Apesar do que muitos dizem, **Vim não precisa de decoração de comandos**. Mantenha uma 
-cola de comandos úteis por perto, com o tempo a memória muscular toma conta dos 
-comandos mais usados.
+- **Vim não precisa de decoração de comandos**. Quer saber como fazer tal tarefa no Vim?
+O Google é seu amigo :). Com o tempo, você notará que a memória muscular já tomou parte
+e você nem precisa mais se lembrar de como fazer certas coisas no Vim.
 - Seja curioso. De vez em quando se pergunte: *Vim pode fazer isso?* Para isso, o Google
-será seu melhor amigo: não só para aprender Vim, mas para diversas outras coisas.
+será seu melhor amigo mais uma vez: não só para aprender Vim, mas para diversas outras coisas.
 
 > **Nota**: Nós forneceremos vários conteúdos extras para você seguir e se aprofundar.
 
@@ -419,7 +419,7 @@ Note que a janela está visualizando o mesmo buffer.
 
 - `:bn` - dentro da nova janela, vamos pro próximo buffer
 
-[![asciicast](https://asciinema.org/a/546285.svg)](https://asciinema.org/a/546285?autoplay=1)
+https://github.com/isaacvicente/minicurso_vim/assets/77455425/c80d27f6-174e-45eb-9875-743c98818ed4
 
 Como essa operação é muito comum, temos um único comando equivalente ao que fizemos:
 - `:sbn` (ou `:sbnext`) - abre uma janela horizontal e visualiza o próximo buffer
