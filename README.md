@@ -17,7 +17,7 @@ dos usuários.
 
 ## Por que usar Vim?
 
-Vou dividir a resposta para essa pergunta em duas partes.
+Vou dividir a resposta para essa pergunta em três partes.
 
 ### Vim Motions
 
@@ -70,6 +70,21 @@ análise sintática do seu código, mostrando erros de sintaxe, gere snippets de
 código, etc.
 
 > [Vídeo interessante de um bom canal sobre Vim](https://youtu.be/D4YTJ2W5q4Y?si=cn31fAgj4eGPeRrz).
+
+### Ecossistema de plugins
+
+Uma das coisas que faz de um editor de texto ser bom é sua extensibilidade.
+Quem já tenha usado outros editores de texto populares pôde percerber que eles
+tem uma vasta lista de plugins que são possíveis de serem instalados.
+
+O mais interessante é que você pode combinar a flexibilidade das configurações do Vim
+com plugins que melhorem sua experiência. Isso faz com que *você* construa o ambiente
+de desenvolvimento que *você* quiser.
+
+Para se ter uma ideia, há por volta de 19 mil plugins (quantidade obtida a partir do link abaixo).
+Um ótimo recurso para listar os plugins mais populares se encontra [aqui](vimawesome.com).
+
+---
 
 Frequentemente as pessoas comparam um editor ao outro.  O que uma pessoa se
 deve atentar é qual a experiência que ela terá e quais os pontos positivos e
