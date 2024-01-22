@@ -244,7 +244,7 @@ de movimento para navegar no arquivo. Os movimentos no Vim também são chamados
 
 - Linhas:
     - `0` - começo da linha
-    - `^` - primeiro caractere da linha
+    - `_` - primeiro caractere da linha
     - `$` - final da linha
 
 - Tela:
@@ -266,6 +266,7 @@ de movimento para navegar no arquivo. Os movimentos no Vim também são chamados
 - Número da linha:
     - `:{n}` ou `{n}G` - vai para a linha de número `n`
 > Você não tem que digitar os "{", apenas digite `10G`, por ex.
+> Lembre-se disso pro resto do texto.
 
 - Correspondência:
     - `%` - encontra o próximo `(`, `[` ou `{`
@@ -513,6 +514,8 @@ de configuração para o Vim.
 - [**Curated Learning Resources - Vim Resources**](https://learnbyexample.github.io/curated_resources/vim.html):
 uma lista com os melhores conteúdos relacionados ao Vim, desde livros até dicas práticas. Guarde esse link em seus
 bookmarks e seja feliz.
+> Dos links aqui citados, esse é o mais importante.
+
 - [Vimrc Configuration Guide](https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/):
 um guia de configuração do vimrc.
 > **Nota**: só adicione ao seu vimrc apenas o que você precisa: geralmente, quanto mais simples, melhor.
@@ -540,26 +543,27 @@ você não está nada errado em usar apenas o Vim. Porém, ultimamente o Neovim 
 sendo o editor de texto mais amado, segundo o 
 [survey do StackOverFlow de 2022](https://survey.stackoverflow.co/2022/#section-most-loved-dreaded-and-wanted-integrated-development-environment).
 
-Algumas das vantagens (dependendo do seu ponto de vista):
+Algumas das vantagens:
 
 - [LSP - Language Server Protocol](https://neovim.io/doc/user/lsp.html#lsp): O LSP facilita recursos
 como go-to-definition, find-references, hover, conclusão, renomeação, formatação, refatoração,
 etc., usando análise semântica de todo o projeto.
-- [Lua scripting](https://neovim.io/doc/user/lua.html#lua): Lua é uma linguagem de scripts bem simples
-e relativamente popular. Ela pode ser usada para configurar o Neovim, oferecendo uma grande flexibilidade
-a um (talvez) pequeno custo de aprender uma nova linguagem de programação.
+- [Lua scripting](https://neovim.io/doc/user/lua.html#lua): Lua é uma linguagem
+de scripts simples, pequena, fácil e relativamente popular. Ela pode ser
+usada para configurar o Neovim, oferecendo uma grande flexibilidade
+a um pequeno custo de aprender uma nova linguagem de programação.
 
 Uma coisa muito bacana acerca do Neovim é que foram construídas aplicações que simulam muito bem modernas
 IDEs. As mais famosas são:
 
+- [LazyVim](https://www.lazyvim.org/): configuração bem completa do Neovim e facilmente extendível ao seu gosto.
 - [LunarVim](https://www.lunarvim.org/): uma camada de IDE sobre o Neovim. Completamente dirigida pela
 comunidade.
-- [NvChad](https://nvchad.com/): uma configuração do Neovim escrita em Lua com o objetivo de
-fornecer uma configuração básica com uma bela interface do usuário e um tempo de inicialização extremamente rápido.
 
-> **Nota**: esses projetos são fantásticos, porém não vá simplesmente usá-los. Se você considera utilizar o Neovim,
-eu recomendaria você realmente entender primeiro o que o Neovim, por padrão, é capaz de fazer. É muito satisfatório
-construir uma configuração só sua: então considere fazer isso!
+> **Nota**: esses projetos são fantásticos, porém se você considera utilizar o Neovim,
+eu recomendaria você realmente entender primeiro o que o Neovim, por padrão, é
+capaz de fazer. É muito satisfatório construir uma configuração só sua: então
+considere fazer isso!
 
 Há ainda mais motivos para que uma pessoa talvez troque Vim pelo Neovim. Se você ficou curioso(a),
 pesquise mais sobre.
@@ -567,7 +571,4 @@ pesquise mais sobre.
 ## Considerações finais
 
 Realmente esperamos que você tenha levado algo de útil desse mini curso. Esperamos também que você
-legitimamente queira usar o Vim (nem que seja para ficar algumas semanas usando). Para quaisquer
-dúvidas contate o [Instagram do PET Computação](https://www.instagram.com/petcomputacaoufcg/) ou então o dos
-organizadores desse mini curso: [Isaac Vicente](https://www.instagram.com/isaac_vcnt/) e
-[Vinícius Muniz](https://www.instagram.com/vinimuz/).
+legitimamente continue usando o Vim.
