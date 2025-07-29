@@ -168,7 +168,7 @@ set termguicolors
 "     colorscheme habamax
 " endif
 
-Or... set the rosepine theme
+" Or... set the rosepine theme
 if &runtimepath =~ 'rosepine'
     set background=dark
     silent! colorscheme rosepine_moon
